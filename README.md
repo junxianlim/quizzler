@@ -1,9 +1,3 @@
-
-![App Brewery Banner](Documentation/AppBreweryBanner.png)
-
-#  Quizzler
-- A trivia quiz app.
-
 ## Quizzler App
 - this is a quiz app built while learning IOS development.
 
