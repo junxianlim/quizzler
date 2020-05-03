@@ -18,100 +18,98 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonTwo: UIButton!
     @IBOutlet weak var buttonThree: UIButton!
     
-    // (Question, (Choices), Answer)
-    let multiChoiceQuestions: [(String, Array<String>, String)] = [
-        (
-            "Which is the largest organ in the human body?",
-            ["Heart", "Skin", "Large Intenstine"],
-            "Skin"
+    let multiChoiceQuestions: [Question] = [
+        Question(
+            text: "Which is the largest organ in the human body?",
+            choices: ["Heart", "Skin", "Large Intenstine"],
+            answer: "Skin"
         ),
-        (
-            "Five dollars is worth how many nickels?",
-            ["25", "50", "100"],
-            "100"
+        Question(
+            text: "Five dollars is worth how many nickels?",
+            choices: ["25", "50", "100"],
+            answer: "100"
         ),
-        (
-            "What do the letters in the GMT time zone stand for?",
-            [
+        Question(
+            text: "What do the letters in the GMT time zone stand for?",
+            choices: [
                 "Global Meridian Time",
                 "General Median Time",
                 "Greenwich Mean Time"
             ],
-            "Greenwich Mean Time"
+            answer: "Greenwich Mean Time"
         ),
-        (
-            "In past times, what would a gentleman keep in his fob pocket?",
-            ["Notebook", "Handkerchief", "Watch"],
-            "Watch"
+        Question(
+            text: "In past times, what would a gentleman keep in his fob pocket?",
+            choices: ["Notebook", "Handkerchief", "Watch"],
+            answer: "Watch"
         ),
-        (
-            "How would one say goodbye in Spanish?",
-            ["Au Revoir", "Adiós", "Salir"],
-            "Adiós"
+        Question(
+            text: "How would one say goodbye in Spanish?",
+            choices: ["Au Revoir", "Adiós", "Salir"],
+            answer: "Adiós"
         ),
-        (
-            "Which of these colours is NOT featured in the logo for Google?",
-            ["Green", "Orange", "Blue"],
-            "Orange"
+        Question(
+            text: "Which of these colours is NOT featured in the logo for Google?",
+            choices: ["Green", "Orange", "Blue"],
+            answer: "Orange"
         ),
-        (
-            "What type of animal was Harambe?",
-            ["Panda", "Gorilla", "Crocodile"],
-            "Gorilla"
+        Question(
+            text:  "What type of animal was Harambe?",
+            choices: ["Panda", "Gorilla", "Crocodile"],
+            answer: "Gorilla"
         ),
-        (
-            "Where is Tasmania located?",
-            ["Indonesia", "Australia", "Scotland"],
-            "Australia"
-        ),
+        Question(
+            text: "Where is Tasmania located?",
+            choices: ["Indonesia", "Australia", "Scotland"],
+            answer: "Australia"
+        )
     ]
     
-    // (Question, (Choices), Answer)
-    let trueFalseQuestions: [(String, Array<String>, String)] = [
-        (
-            "A slug's blood is green",
-            trueFalseChoices,
-            "True"
+    let trueFalseQuestions: [Question] = [
+        Question(
+            text: "A slug's blood is green",
+            choices: trueFalseChoices,
+            answer: "True"
         ),
-        (
-            "The total surface area of two human lungs is approximately 70 square metres.",
-            trueFalseChoices,
-            "True"
+        Question(
+            text: "The total surface area of two human lungs is approximately 70 square metres.",
+            choices: trueFalseChoices,
+            answer: "True"
         ),
-        (
-            "In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place",
-            trueFalseChoices,
-            "False"
+        Question(
+            text: "In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place",
+            choices: trueFalseChoices,
+            answer: "False"
         ),
-        (
-            "It is illegal to pee in the Ocean in Portugal",
-            trueFalseChoices,
-            "True"
+        Question(
+            text: "It is illegal to pee in the Ocean in Portugal",
+            choices: trueFalseChoices,
+            answer: "True"
         ),
-        (
-            "You can lead a cow down stairs but not up stairs.",
-            trueFalseChoices,
-            "False"
+        Question(
+            text: "You can lead a cow down stairs but not up stairs.",
+            choices: trueFalseChoices,
+            answer: "False"
         ),
-        (
-            "Google was originally called 'Backrub'",
-            trueFalseChoices,
-             "True"
+        Question(
+            text: "Google was originally called 'Backrub'",
+            choices: trueFalseChoices,
+            answer: "True"
         ),
-        (
-            "The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.",
-            trueFalseChoices,
-            "False"
+        Question(
+            text: "The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.",
+            choices: trueFalseChoices,
+            answer: "False"
         ),
-        (
-            "No piece of square dry paper can be folded in half more than 7 times.",
-            trueFalseChoices,
-            "False"
+        Question(
+            text: "No piece of square dry paper can be folded in half more than 7 times.",
+            choices: trueFalseChoices,
+            answer: "False"
         ),
-        (
-            "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.",
-            trueFalseChoices,
-            "True"
+        Question(
+            text: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.",
+            choices: trueFalseChoices,
+            answer: "True"
         )
     ]
     
@@ -119,9 +117,7 @@ class ViewController: UIViewController {
     var answer: String = ""
     var currentScore: Int = 0
     var totalQuestions: Int = 0
-    var quizQuestionsState: [(String, Array<String>, String)] = [
-        ("", [""], "")
-    ]
+    var quizQuestionsState: [Question] = []
     
     // Available states: choose_quiz, playing, game_over
     var gameState: String = "choose_quiz"
@@ -160,20 +156,15 @@ class ViewController: UIViewController {
     // Start the quiz with the selected questions
     func selectQuiz(selectedQuiz: String) {
         gameState = "playing"
-        switch selectedQuiz {
-        case "Multiple Choice Questions":
-            initializeQuestions(questions: multiChoiceQuestions)
-            return
-        case "True/False Questions":
-            initializeQuestions(questions: trueFalseQuestions)
-            return
-        default:
-            return
-        }
+        let gameMode: [String: [Question]] = [
+            "Multiple Choice Questions": multiChoiceQuestions,
+            "True/False Questions": trueFalseQuestions
+        ]
+        initializeQuestions(questions: gameMode[selectedQuiz]!)
     }
     
     // Load questions into game state
-    func initializeQuestions(questions: [(String, Array<String>, String)]) {
+    func initializeQuestions(questions: [Question]) {
         totalQuestions = questions.count
         quizQuestionsState = questions
         getNewQuestion()
@@ -183,22 +174,22 @@ class ViewController: UIViewController {
     func getNewQuestion() {
         let choiceButtons = [buttonOne, buttonTwo, buttonThree]
         let questionNumber = Int.random(in: 0...quizQuestionsState.count - 1)
-        let (question, choices, ans) = quizQuestionsState[questionNumber]
+        let q = quizQuestionsState[questionNumber]
         
         // Hide all buttons first
         hideButtons()
         
         // Set new answer, and reveal button
-        for (i, e) in choices.enumerated() {
+        for (i, e) in q.choices.enumerated() {
             choiceButtons[i]?.setTitle(e, for: .normal)
             choiceButtons[i]?.isHidden = false
         }
         
         // Remove question from pool
         quizQuestionsState.remove(at: questionNumber)
-        
-        answer = ans
-        questionLabel.text = question
+
+        answer = q.answer
+        questionLabel.text = q.text
     }
     
     // Resolve selected choice

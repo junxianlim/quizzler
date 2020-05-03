@@ -7,22 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26C4F2BF23E6B7CF0076466E /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 26C4F2BD23E6B7CF0076466E /* correct.wav */; };
-		26C4F2C023E6B7CF0076466E /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 26C4F2BE23E6B7CF0076466E /* wrong.wav */; };
-		26C4F2C223E6BDDD0076466E /* restart.wav in Resources */ = {isa = PBXBuildFile; fileRef = 26C4F2C123E6BDDD0076466E /* restart.wav */; };
+		2627F087245EC01C008C6A80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4BDE4F22D878BA005BA4CC /* Main.storyboard */; };
+		2627F089245EC131008C6A80 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627F088245EC131008C6A80 /* Question.swift */; };
+		2627F08B245EE230008C6A80 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2627F08A245EE230008C6A80 /* correct.wav */; };
+		2627F08D245EE237008C6A80 /* restart.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2627F08C245EE237008C6A80 /* restart.wav */; };
+		2627F08F245EE23C008C6A80 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2627F08E245EE23C008C6A80 /* wrong.wav */; };
 		AD4BDE4A22D878BA005BA4CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4BDE4922D878BA005BA4CC /* AppDelegate.swift */; };
 		AD4BDE4C22D878BA005BA4CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4BDE4B22D878BA005BA4CC /* SceneDelegate.swift */; };
 		AD4BDE4E22D878BA005BA4CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4BDE4D22D878BA005BA4CC /* ViewController.swift */; };
-		AD4BDE5122D878BA005BA4CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4BDE4F22D878BA005BA4CC /* Main.storyboard */; };
 		AD4BDE5322D878BC005BA4CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4BDE5222D878BC005BA4CC /* Assets.xcassets */; };
 		AD4BDE5622D878BC005BA4CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4BDE5422D878BC005BA4CC /* LaunchScreen.storyboard */; };
 		AD7631B622F9851900C6E71B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD7631B522F9851900C6E71B /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		26C4F2BD23E6B7CF0076466E /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = correct.wav; path = ../../../../../../Downloads/correct.wav; sourceTree = "<group>"; };
-		26C4F2BE23E6B7CF0076466E /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong.wav; path = ../../../../../../Downloads/wrong.wav; sourceTree = "<group>"; };
-		26C4F2C123E6BDDD0076466E /* restart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = restart.wav; path = ../../../../../../Downloads/restart.wav; sourceTree = "<group>"; };
+		2627F088245EC131008C6A80 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		2627F08A245EE230008C6A80 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = correct.wav; path = Assets/correct.wav; sourceTree = SOURCE_ROOT; };
+		2627F08C245EE237008C6A80 /* restart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = restart.wav; path = Assets/restart.wav; sourceTree = SOURCE_ROOT; };
+		2627F08E245EE23C008C6A80 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong.wav; path = Assets/wrong.wav; sourceTree = SOURCE_ROOT; };
 		AD4BDE4622D878BA005BA4CC /* Quizzler-iOS13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quizzler-iOS13.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4BDE4922D878BA005BA4CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD4BDE4B22D878BA005BA4CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,9 +67,9 @@
 		AD4BDE4822D878BA005BA4CC /* Quizzler-iOS13 */ = {
 			isa = PBXGroup;
 			children = (
-				26C4F2C123E6BDDD0076466E /* restart.wav */,
-				26C4F2BD23E6B7CF0076466E /* correct.wav */,
-				26C4F2BE23E6B7CF0076466E /* wrong.wav */,
+				2627F08E245EE23C008C6A80 /* wrong.wav */,
+				2627F08A245EE230008C6A80 /* correct.wav */,
+				2627F08C245EE237008C6A80 /* restart.wav */,
 				AD4BDE4922D878BA005BA4CC /* AppDelegate.swift */,
 				AD4BDE4B22D878BA005BA4CC /* SceneDelegate.swift */,
 				AD4BDE4F22D878BA005BA4CC /* Main.storyboard */,
@@ -75,6 +77,7 @@
 				AD4BDE5222D878BC005BA4CC /* Assets.xcassets */,
 				AD4BDE5422D878BC005BA4CC /* LaunchScreen.storyboard */,
 				AD4BDE5722D878BC005BA4CC /* Info.plist */,
+				2627F088245EC131008C6A80 /* Question.swift */,
 			);
 			path = "Quizzler-iOS13";
 			sourceTree = "<group>";
@@ -137,13 +140,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2627F087245EC01C008C6A80 /* Main.storyboard in Resources */,
 				AD4BDE5622D878BC005BA4CC /* LaunchScreen.storyboard in Resources */,
 				AD4BDE5322D878BC005BA4CC /* Assets.xcassets in Resources */,
+				2627F08F245EE23C008C6A80 /* wrong.wav in Resources */,
+				2627F08B245EE230008C6A80 /* correct.wav in Resources */,
+				2627F08D245EE237008C6A80 /* restart.wav in Resources */,
 				AD7631B622F9851900C6E71B /* README.md in Resources */,
-				26C4F2BF23E6B7CF0076466E /* correct.wav in Resources */,
-				26C4F2C023E6B7CF0076466E /* wrong.wav in Resources */,
-				AD4BDE5122D878BA005BA4CC /* Main.storyboard in Resources */,
-				26C4F2C223E6BDDD0076466E /* restart.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD4BDE4E22D878BA005BA4CC /* ViewController.swift in Sources */,
+				2627F089245EC131008C6A80 /* Question.swift in Sources */,
 				AD4BDE4A22D878BA005BA4CC /* AppDelegate.swift in Sources */,
 				AD4BDE4C22D878BA005BA4CC /* SceneDelegate.swift in Sources */,
 			);
